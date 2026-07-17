@@ -44,11 +44,22 @@
 <h2>Blog posts</h2>
 
 <div class="card">
+  <h3>Persistent IRC bouncer on home server<span class="tag">Next project to do</span></h3>
+  <p> I really love IRC but can't use it as a means of letting people contact me. So my next project is hosting a persistent IRC bouncer
+    on a container on my home server. I'd really like for it to go through Obscura or Mullvad but I'm not sure how that works yet. I know
+    I could just make a lightweight Alpine LXC on my server and install mullvad-cli and weechat and leave it running forever. This is the 
+    most straight forward approach for what I want which is usually what I end up doing. Though, I'd like to see regardless what QOL features the ones 
+    intended for standalone hosting have to offer.
+  </p>
+</div>
+
+<div class="card">
   <h3>femboyy.com <span class="tag">16 Jul 2026</span></h3>
   <p>I wanted a modern looking website for a more publicly appealing look. I tried doing hugo git pages but that was quite a nightmare. 
     The documentation only exists for senior web devs who have hugo experiences or tell you the first step and nothing else. I looked at
     github docs for hugo, hugo's official docs, and a few blogs about it and not once did it mention /public was the file I push for the 
-    pages. Once I realized that I gave up on that idea, as learning an entire web dev framework with poorly made docs for an about me page 
+    pages. Once I realized I looked in public and realized that is what you're supposed to push and it wasn't in the docs I was reading atll, 
+    I gave up on that idea. Learning an entire web dev framework with poorly made docs for an about me page 
     is ridiculous. I stumbled upon carrd.co. Now I wasn't going to pay for a website to be made. However, it was $19/year for them to host 
     it under a custom domain and use all premium features. A VPS wouldve costed $8-15/mo, I would've had to set it up myself, worry about 
     hosting, maintinence, and I wouldn't have a quick good looking drag & drop UI for updating or customizing it. When I saw it through that 
@@ -81,17 +92,16 @@
 <div class="card">
   <h3>A+ core 2 <span class="tag">23 Jun 2026</span></h3>
   <p>It's nicknamed terminology+ but it was surprisingly in depth. The main things that might require memorization if you are going 
-    into it with no experience is ports and DNS record types. I already knew the answers to those and didn't need to study thankfully,
-    but it asked some questions I didn't expect about fiber cable conneector types, ports, and DNS records mostly.
+    into it with no experience is cable connector types, ports, and DNS record types. I already knew the answers to those and didn't need to study thankfully.
   </p>
 </div>
 
 <div class="card">
   <h3>bullshark369.org <span class="tag">21 Jun 2026</span></h3>
   <p>This VPS this website is on was originally going to be a reverse proxy for my home lab. I decided to instead just host the website
-    on the VPS and thwart all the portforwarding BS and security risks of opening my local network to a public facing domain. Just a simple
-    nginx and static HTML page. I write these cards in vscodium then push and clone them using git, then reload nginx to update. No config, super
-    easy, clean, and light. 
+    on the VPS and thwart all the portforwarding BS and security risks of opening my local network to a public facing domain. Just simple
+    nginx and static HTML pages. I write the HTML in vscodium then push and pull them using git, then rc-service ngnix reload to update. No config, super
+    easy, clean, and light. It's in the header of the page but I took all of the boilerplate for style and the footer from my buddy @0druid.cc. 
   </p>
 </div>
 
