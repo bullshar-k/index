@@ -33,7 +33,7 @@
 <body>
 
 <h1>bullshark369.org</h1>
-<p>Bullshark's blog of network engineering endeavours</p>
+<p>shark's blog of network engineering endeavours</p>
 <p>HTML files shamelessy stolen from my friend over @<a href="https://0druid.cc/">0druid.cc</a>. He does good stuff, check him out!</p>
 
 <div class="nav">
@@ -71,7 +71,10 @@
 
 <div class="card">
   <h3>DNS: Adguard Home <span class="tag">28 Jun 2026</span></h3>
-  <p>Initial setup was very easy, 10/10, bravo to the devs!</p>
+  <p>Initial setup was very easy, 10/10, bravo to the devs! Pretty default settings with 9.9.9.9:853 as my upstream. Mullvad does
+    report DNS leaks however, they 'originate' in the same region as my exit node, so it's not really a DNS leak. It just isn't using Mullvads
+    DNS / tunnel. 
+  </p>
   <p>My biggest obstacle was using the Arch Linux /extra Mullvad Client specifically in getting it to work with the local DNS. See 
     /etc/resolv.conf would have 127.0.0.53 which is 
     fine because its pointing back to a local adress for DNS. Mullvad writes this rule. I had to enable LAN sharing, disable lockdown 
@@ -101,7 +104,7 @@
   <p>This VPS this website is on was originally going to be a reverse proxy for my home lab. I decided to instead just host the website
     on the VPS and thwart all the portforwarding BS and security risks of opening my local network to a public facing domain. Just simple
     nginx and static HTML pages. I write the HTML in vscodium then push and pull them using git, then rc-service ngnix reload to update. No config, super
-    easy, clean, and light. It's in the header of the page but I took all of the boilerplate for style and the footer from my buddy @0druid.cc. 
+    easy, clean, and light. It's in the header of the page but I took all of the boilerplate for style and the footer from my buddy druid @<a href="https://0druid.cc/">0druid.cc</a>. 
   </p>
 </div>
 
@@ -113,6 +116,15 @@
     default. It's very nice seeing so much blocked traffic that was not needed. Roughly 70-75% of traffic at any given time. 
     At the same time I replaced my ISPs router and modem. I did have to call them to get the MAC of my old modem wipe  & the new one 
     inserted which was annoying, but it didn't take long. 
+  </p>
+</div>
+
+<div class="card">
+  <h3>Linux journey <span class="tag">1 Feb 2026</span></h3>
+  <p>I had already used Linux before switching fully no dual boot on this date. I was stuck on windows simply because of Escape From Tarkov which I'd fully 
+    quit playing for a while. I wen't Mint -> CachyOS -> Arch pretty fast. Arch is simple and amazing in my opinion. Only time I don't use Arch is servers 
+    where I use Alpine instead. It is also hard from a far distro. SystemD, massive repo, amazing docs, and no special distro specific things. The / folder 
+    just looks like Linux, nothing extra. Furthermore, no dependencies on flatpaks or snap packages for software. BLEH 
   </p>
 </div>
 
