@@ -33,9 +33,15 @@
 <body>
 
 <h1>bullshark369.org</h1>
-<p>A blog of my personal experiences and issues in hobby networking projects & other related topics.</p>
-<p>HTML files shameless stolen from my friend over @ <a href="https://0druid.cc/">0druid.cc</a>. He does good stuff, check him out!</p>
-<h2>Overview</h2>
+<p>Bullshark's blog of network engineering endeavours</p>
+<p>HTML files shameless stolen from my friend over @<a href="https://0druid.cc/">0druid.cc</a>. He does good stuff, check him out!</p>
+
+<div class="nav">
+  <a href="/index.html"><span style="color: white;">Index</span></a>
+  <a href="/blog.html">Blog</a>
+</div>
+
+<h2>Welcome</h2>
 <p>I am a network engineer and undergrad for a bachelors in Cloud & Network Engineering and have made a blog to share my personal issues in troubleshooting and 
     experience with different software / equipment. Most of the stuff I post here will be my experience with hobbyist activities of Linux, self hosting, and experience 
     gaining certifications as I earn my degree.</p>
@@ -64,65 +70,5 @@
 <p>Current purpose: Just a burner laptop I reinstall a new OS on every time I find I need a laptop 
     for a specific purpose. Usually for travel because it was cheap and I don't mind if it gets broken</p>
 
-<h2>Blog posts</h2>
-
-<div class="card">
-  <h3>femboyy.com <span class="tag">16 Jul 2026</span></h3>
-  <p>I wanted a modern looking website for a more publicly appealing look. I tried doing hugo git pages but that was quite a nightmare. 
-    The documentation only exists for senior web devs who have hugo experiences or tell you the first step and nothing else. I looked at
-    github docs for hugo, hugo's official docs, and a few blogs about it and not once did it mention /public was the file I push for the 
-    pages. Once I realized that I gave up on that idea, as learning an entire web dev framework with poorly made docs for an about me page 
-    is ridiculous. I stumbled upon carrd.co. Now I wasn't going to pay for a website to be made. However, it was $19/year for them to host 
-    it under a custom domain and use all premium features. A VPS wouldve costed $8-15/mo, I would've had to set it up myself, worry about 
-    hosting, maintinence, and I wouldn't have a quick good looking drag & drop UI for updating or customizing it. When I saw it through that 
-    lens it was a no brainer. There was a slight issue in the DNS records. They require a type A of host @ and a CNAME of host www. It didn't 
-    want to initialize at first but they had a troubleshooting button that came up automatically after failure. I clicked it, it said to now
-    try again since trouble shooting had been ran, and boom, it worked. 
-  </p>
-</div>
-
-<div class="card">
-  <h3>DNS: Adguard Home <span class="tag">28 Jun 2026</span></h3>
-  <p>Initial setup was very easy, 10/10, bravo to the devs!</p>
-  <p>My biggest obstacle was using the Arch Linux /extra Mullvad Client specifically in getting it to work with the local DNS. See 
-    /etc/resolv.conf would have 127.0.0.53 which is 
-    fine because its pointing back to a local adress for DNS. Mullvad writes this rule. I had to enable LAN sharing, disable lockdown 
-    mode, and add custom dns for my local address of the Adguard VM. If I edited resolv.conf to point to 192.168.1.50 (Adguard Homes 
-    LAN address) it would send queries out, upstream, cache, then resolve it to the client but it wouldn't end up getting the query 
-    back. It's because Mullvad doesn't change your NIC's DNS address when you put a custom DNS. It changes what it needs to but I had 
-    to use resolvctl to change the DNS of eno1.</p>
-  <p>Another incovenient thing is if you want whole network VPN usage you have to manually configure every exit node with a wireguard 
-    config. Which is fine for normal server uses, security, privacy of the server etc. However, for normal VPN usage using the client 
-    is much easier and more appropriate. Because of exit node outages and some things being randomly banned on some exit nodes, switching
-    often is common and manually configuring & switching each time in my firewal is totally not appropriate for my use.</p>
-</div>
-
-<div class="card">
-  <h3>A+ core 2 <span class="tag">23 Jun 2026</span></h3>
-  <p>It's nicknamed terminology+ but it was surprisingly in depth. The main things that might require memorization if you are going 
-    into it with no experience is ports and DNS record types. I already knew the answers to those and didn't need to study thankfully,
-    but it asked some questions I didn't expect about fiber cable conneector types, ports, and DNS records mostly.
-  </p>
-</div>
-
-<div class="card">
-  <h3>bullshark369.org <span class="tag">21 Jun 2026</span></h3>
-  <p>This VPS this website is on was originally going to be a reverse proxy for my home lab. I decided to instead just host the website
-    on the VPS and thwart all the portforwarding BS and security risks of opening my local network to a public facing domain. Just a simple
-    nginx and static HTML page. I write these cards in vscodium then push and clone them using git, then reload nginx to update. No config, super
-    easy, clean, and light. 
-  </p>
-</div>
-
-<div class="card">
-  <h3>Firewall: OPNsense <span class="tag">19 Jun 2026</span></h3>
-  <p>Skipping all the basic stuff in the docs. As a result of the great work of these devs I can't say much about the installation process.
-    It was extremely easy and unremarkable. However, I did have it crash one time. I'd recommend when making the OPNsense VM to turn off 
-    memory banding which I beleive was the cause. I also gave it 8/16GB and changed it to 12/16GB with memory banding off which is on by 
-    default. It's very nice seeing so much blocked traffic that was not needed. Roughly 70-75% of traffic at any given time. 
-    At the same time I replaced my ISPs router and modem. I did have to call them to get the MAC of my old modem wipe  & the new one 
-    inserted which was annoying, but it didn't take long. 
-  </p>
-</div>
 
 <div class="footer">bullshark369.org | maintained by <a href="mailto:bullsharkgunsemail@pm.me">Shark</a></div>

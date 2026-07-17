@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>blog @ bullshark369.org</title>
+<style>
+  @font-face{font-family:Terminus;src:url(/terminus.ttf) format('truetype')}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#000;color:#bbb;font:14px/1.5 Terminus;padding:32px;max-width:760px;margin:0 auto}
+  a{color:#0f0;text-decoration:none}a:hover{background:#0f0;color:#000}
+  h1{font-size:16px;color:#fff;margin-bottom:4px}
+  h2{font-size:14px;color:#fff;margin:28px 0 10px;border-bottom:1px solid #333;padding-bottom:4px}
+  h3{font-size:14px;color:#fff;margin-bottom:4px}
+  p{margin-bottom:8px;color:#999;font-size:13px}
+  ul{margin:4px 0 12px 18px;color:#999;font-size:13px}
+  li{margin-bottom:2px}
+  code{color:#0f0;font-family:Terminus}
+  .card{border-left:1px solid #333;padding:8px 0 8px 12px;margin-bottom:12px}
+  .card p,.card ul{font-size:12px}
+  .tag{color:#0f0;font-size:11px}
+  .back{color:#777;font-size:12px}
+  .back a{color:#777}.back a:hover{color:#0f0;background:none}
+  .footer{color:#555;font-size:11px;margin-top:32px;padding-top:12px;border-top:1px solid #333}
+  table{width:100%;border-collapse:collapse;margin:8px 0}
+  th,td{padding:4px 8px;text-align:left;border-bottom:1px solid #333;font-size:12px}
+  th{color:#aaa}td{color:#999}
+  summary{cursor:pointer;color:#0f0;font-size:12px;margin:8px 0}
+  pre{background:#111;border:1px solid #333;padding:8px;margin:8px 0;font-size:12px;overflow-x:auto}
+  pre code{color:#999}
+</style>
+</head>
+<body>
+
+<h1>bullshark369.org</h1>
+<p>Bullshark's blog of network engineering endeavours</p>
+<p>HTML files shameless stolen from my friend over @<a href="https://0druid.cc/">0druid.cc</a>. He does good stuff, check him out!</p>
+
+<div class="nav">
+  <a href="/index.html">Index</a>
+  <a href="/blog.html"><span style="color: white;">Blog</span></a>
+</div>
+
+<h2>Blog posts</h2>
+
+<div class="card">
+  <h3>femboyy.com <span class="tag">16 Jul 2026</span></h3>
+  <p>I wanted a modern looking website for a more publicly appealing look. I tried doing hugo git pages but that was quite a nightmare. 
+    The documentation only exists for senior web devs who have hugo experiences or tell you the first step and nothing else. I looked at
+    github docs for hugo, hugo's official docs, and a few blogs about it and not once did it mention /public was the file I push for the 
+    pages. Once I realized that I gave up on that idea, as learning an entire web dev framework with poorly made docs for an about me page 
+    is ridiculous. I stumbled upon carrd.co. Now I wasn't going to pay for a website to be made. However, it was $19/year for them to host 
+    it under a custom domain and use all premium features. A VPS wouldve costed $8-15/mo, I would've had to set it up myself, worry about 
+    hosting, maintinence, and I wouldn't have a quick good looking drag & drop UI for updating or customizing it. When I saw it through that 
+    lens it was a no brainer. There was a slight issue in the DNS records. They require a type A of host @ and a CNAME of host www. It didn't 
+    want to initialize at first but they had a troubleshooting button that came up automatically after failure. I clicked it, it said to now
+    try again since trouble shooting had been ran, and boom, it worked. 
+  </p>
+</div>
+
+<div class="card">
+  <h3>DNS: Adguard Home <span class="tag">28 Jun 2026</span></h3>
+  <p>Initial setup was very easy, 10/10, bravo to the devs!</p>
+  <p>My biggest obstacle was using the Arch Linux /extra Mullvad Client specifically in getting it to work with the local DNS. See 
+    /etc/resolv.conf would have 127.0.0.53 which is 
+    fine because its pointing back to a local adress for DNS. Mullvad writes this rule. I had to enable LAN sharing, disable lockdown 
+    mode, and add custom dns for my local address of the Adguard VM. If I edited resolv.conf to point to 192.168.1.50 (Adguard Homes 
+    LAN address) it would send queries out, upstream, cache, then resolve it to the client but it wouldn't end up getting the query 
+    back. It's because Mullvad doesn't change your NIC's DNS address when you put a custom DNS. It changes what it needs to but I had 
+    to use resolvctl to change the DNS of eno1.</p>
+  <p>Another incovenient thing is if you want whole network VPN usage you have to manually configure every exit node with a wireguard 
+    config. Which is fine for normal server uses, security, privacy of the server etc. However, for normal VPN usage using the client 
+    is much easier and more appropriate. Because of exit node outages and some things being randomly banned on some exit nodes, switching
+    often is common and manually configuring & switching each time in my firewal is totally not appropriate for my use.</p>
+</div>
+
+<div class="card">
+  <h3>A+ core 2 <span class="tag">23 Jun 2026</span></h3>
+  <p>It's nicknamed terminology+ but it was surprisingly in depth. The main things that might require memorization if you are going 
+    into it with no experience is ports and DNS record types. I already knew the answers to those and didn't need to study thankfully,
+    but it asked some questions I didn't expect about fiber cable conneector types, ports, and DNS records mostly.
+  </p>
+</div>
+
+<div class="card">
+  <h3>bullshark369.org <span class="tag">21 Jun 2026</span></h3>
+  <p>This VPS this website is on was originally going to be a reverse proxy for my home lab. I decided to instead just host the website
+    on the VPS and thwart all the portforwarding BS and security risks of opening my local network to a public facing domain. Just a simple
+    nginx and static HTML page. I write these cards in vscodium then push and clone them using git, then reload nginx to update. No config, super
+    easy, clean, and light. 
+  </p>
+</div>
+
+<div class="card">
+  <h3>Firewall: OPNsense <span class="tag">19 Jun 2026</span></h3>
+  <p>Skipping all the basic stuff in the docs. As a result of the great work of these devs I can't say much about the installation process.
+    It was extremely easy and unremarkable. However, I did have it crash one time. I'd recommend when making the OPNsense VM to turn off 
+    memory banding which I beleive was the cause. I also gave it 8/16GB and changed it to 12/16GB with memory banding off which is on by 
+    default. It's very nice seeing so much blocked traffic that was not needed. Roughly 70-75% of traffic at any given time. 
+    At the same time I replaced my ISPs router and modem. I did have to call them to get the MAC of my old modem wipe  & the new one 
+    inserted which was annoying, but it didn't take long. 
+  </p>
+</div>
+
+<div class="footer">bullshark369.org | maintained by <a href="mailto:bullsharkgunsemail@pm.me">Shark</a></div>
