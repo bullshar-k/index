@@ -47,7 +47,7 @@
 
 <h2>Current Equipment stack</h2>
 <h3>Dell Optiplex 3060</h3>
-<p>Specs: Intel I5-8500 | 16GB DDR4 RAM | 250GB NVMe | 192.168.1.23</p>
+<p>Specs: Intel I5-8500 | 16GB DDR4 RAM | 250GB NVMe | +4x1GiB NIC | 192.168.1.23</p>
 <p>Current purpose: Running OPNsense in a ProxmoxVM. Firewall & router</p>
 <h3>Main home server</h3>
 <p>Specs: Ryzen 5-5500 | 32GB DDR4 RAM | 2TB NVMe | AMD 7900XTX | 192.168.1.24</p>
@@ -68,7 +68,7 @@
 
 <div class="card">
   <h3>femboyy.com <span class="tag">16 Jul 2026</span></h3>
-  <p>I wanted a modern looking website for a more publicly appealing look. I tried doing hugo git pages but that was quite a nightname. 
+  <p>I wanted a modern looking website for a more publicly appealing look. I tried doing hugo git pages but that was quite a nightmare. 
     The documentation only exists for senior web devs who have hugo experiences or tell you the first step and nothing else. I looked at
     github docs for hugo, hugo's official docs, and a few blogs about it and not once did it mention /public was the file I push for the 
     pages. Once I realized that I gave up on that idea, as learning an entire web dev framework with poorly made docs for an about me page 
@@ -97,16 +97,32 @@
     often is common and manually configuring & switching each time in my firewal is totally not appropriate for my use.</p>
 </div>
 
+<div class="card">
+  <h3>A+ core 2 <span class="tag">23 Jun 2026</span></h3>
+  <p>It's nicknamed terminology+ but it was surprisingly in depth. The main things that might require memorization if you are going 
+    into it with no experience is ports and DNS record types. I already knew the answers to those and didn't need to study thankfully,
+    but it asked some questions I didn't expect about fiber cable conneector types, ports, and DNS records mostly.
+  </p>
+</div>
+
+<div class="card">
+  <h3>bullshark369.org <span class="tag">21 Jun 2026</span></h3>
+  <p>This VPS this website is on was originally going to be a reverse proxy for my home lab. I decided to instead just host the website
+    on the VPS and thwart all the portforwarding BS and security risks of opening my local network to a public facing domain. Just a simple
+    nginx and static HTML page. I write these cards in vscodium then push and clone them using git, then reload nginx to update. No config, super
+    easy, clean, and light. 
+  </p>
+</div>
 
 <div class="card">
   <h3>Firewall: OPNsense <span class="tag">19 Jun 2026</span></h3>
   <p>Skipping all the basic stuff in the docs. As a result of the great work of these devs I can't say much about the installation process.
     It was extremely easy and unremarkable. However, I did have it crash one time. I'd recommend when making the OPNsense VM to turn off 
     memory banding which I beleive was the cause. I also gave it 8/16GB and changed it to 12/16GB with memory banding off which is on by 
-    default. It's very nice seeing so much blocked traffic that was not needed. The only approved traffic is :123 :53 fe80 & stuff I 
-    actually requested.
+    default. It's very nice seeing so much blocked traffic that was not needed. Roughly 70-75% of traffic at any given time. 
+    At the same time I replaced my ISPs router and modem. I did have to call them to get the MAC of my old modem wipe  & the new one 
+    inserted which was annoying, but it didn't take long. 
   </p>
-
 </div>
 
-<div class="footer">bullshark369.org | made & maintained by <a href="mailto:bullsharkgunsemail@pm.me">Shark</a> @ bullsharkgunsemail@pm.me</div>
+<div class="footer">bullshark369.org | maintained by <a href="mailto:bullsharkgunsemail@pm.me">Shark</a></div>
