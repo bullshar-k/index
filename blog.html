@@ -20,12 +20,20 @@
 <h2>Blog posts</h2>
 
 <div class="card">
-  <h3>Persistent IRC bouncer on home server <span class="tag">Next project to do</span></h3>
-  <p> I really love IRC but can't use it as a means of letting people contact me. So my next project is hosting a persistent IRC bouncer
-    on a container on my home server. I'd really like for it to go through Obscura or Mullvad but I'm not sure how that works yet. I know
-    I could just make a lightweight Alpine LXC on my server and install mullvad-cli and weechat and leave it running forever. This is the 
-    most straight forward approach for what I want which is usually what I end up doing. Though, I'd like to see regardless what QOL features the ones 
-    intended for standalone hosting have to offer.
+  <h3>Self hosted monero node <span class="tag">Next project</span></h3>
+  <p> I'll use public nodes for now but I'd like my own. Issue is the nodes are resource heavy so I might need a CPU upgrade as id prefer a 16 core CPU and 64GB of ram
+    + some hard drives in a RAID5. 
+  </p>
+</div>
+
+<div class="card">
+  <h3>Persistent IRC client <span class="tag">19 Jul 2026</span></h3>
+  <p> This went less smoothly than expected. I intended to use Alpine for a lightweight container just running weechat. However, Alpine doesn't have Mullvad 
+    normally and I've never used weechat or Mullvad on open-rc so I didn't feel like doing that. Tried Arch but had issues with error: no kernel support for landlock. 
+    I don't think Arch likes being turned into a container images -w-, So I resorted to Debain which went pretty smooth. Added the Mullvad repo manually, connected, 
+    started weechat and connected. Although at first Mulvad did lockdown mode my network and because I wasn't connected when I did I couldn't log in so it basically bricked me.
+    I just ran systemctl stop mullvad-daemon & pkilled it, then restarted the daemon and verified my account first thing. Then everything was smooth from there. So now to access 
+    my persistent IRC I just go over to my servers Proxmox and I have Weechat running on a Debian container with Tmux.
   </p>
 </div>
 
@@ -102,4 +110,4 @@
   </p>
 </div>
 
-<div class="footer">@bullshark369.org | Maintained by <a href="mailto:bullsharkgunsemail@pm.me">Shark</a></div>
+<div class="footer">@bullshark369.org | Maintained by <a href="mailto:bullsharkgunsemail@pm.me">Shark</a></div> @ <span style="color: #0f0;">irc://irc.libera.chat:bullshar_k</span>
