@@ -29,8 +29,8 @@
 <div class="card">
   <h3>Persistent IRC client <span class="tag">19 Jul 2026</span></h3>
   <p> This went less smoothly than expected. I intended to use Alpine for a lightweight container just running weechat. However, Alpine doesn't have Mullvad 
-    normally and I've never used weechat or Mullvad on open-rc so I didn't feel like doing that. Tried Arch but had issues with error: no kernel support for landlock. 
-    I don't think Arch likes being turned into a container images -w-, So I resorted to Debain which went pretty smooth. Added the Mullvad repo manually, connected, 
+    normaly and I've never used weechat or Mullvad on open-rc so I didn't feel like doing that. Tried Arch but had issues with error: no kernel support for landlock. 
+    I don't think Arch likes being turned into a container image -w-, So I resorted to Debain which went pretty smooth. Added the Mullvad repo manually, connected, 
     started weechat and connected. Although at first Mulvad did lockdown mode my network and because I wasn't connected when I did I couldn't log in so it basically bricked me.
     I just ran systemctl stop mullvad-daemon & pkilled it, then restarted the daemon and verified my account first thing. Then everything was smooth from there. So now to access 
     my persistent IRC I just go over to my servers Proxmox and I have Weechat running on a Debian container with Tmux.
@@ -110,4 +110,4 @@
   </p>
 </div>
 
-<div class="footer">@bullshark369.org | Maintained by <a href="mailto:bullsharkgunsemail@pm.me">Shark</a> @ <span style="color: #0f0;">irc://irc.libera.chat:bullshar_k</span></div> 
+<div class="footer">@bullshark369.org | Maintained by <a href="mailto:bullsharkgunsemail@pm.me">Shark</a>@<span style="color: #0f0;">irc://irc.libera.chat:bullshar_k</span></div> 
