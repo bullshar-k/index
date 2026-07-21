@@ -33,6 +33,78 @@
 </div>
 
 <div class="card">
+  <h3>OpenRC vs SystemD <span class="tag">21 Jul 2026</span></h3>
+  <p> 
+I bench marked in a VM Artix Linux with OpenRC and Arch Linux with SystemD. 
+
+<h2>Environment variables</h2>
+<table>
+ <tr>
+	<th>Ram</th>
+    <th>Swap</th>
+    <th>Storage</th>
+    <th>Filesys</th>
+	<th>DE</th>
+    <th>Compiler</th>
+	<th>Benchmark</th>
+</tr>
+<tr>
+	<td>16GiB</td>
+    <td>none</td>
+    <td>50Gib NVMe</td>
+    <td>ext4</td>
+    <td>none, TTY</td>
+    <td> GCC 13.3.0</td>
+	<td> FOSSbench</td>
+</table>
+<p>
+Note: Both tests were done separately, not in concurrency, with the same background activity on the host machine. Scores are difference from Arch - Artix. If the number is positive Arch scored higher. Percent diffs are calcualted as follows: 100(|diff|/arch's score)
+  </p>
+  <h2>Optimised portable C</h2>
+<table>
+  <tr>
+    <th>Native integer math</th>
+    <th>Wide integer math</th>
+    <th>Floating point math</th>
+    <th>Prime numbers</th>
+    <th>Extended instructions</th>
+    <th>Compression</th>
+    <th>Encryption</th>
+    <th>Physics</th>
+	<th>Sorting</th>
+    <th>Memory latency</th>
+	<th>Memory Bandwidth</th>
+    <Memory
+ </tr>
+  <tr>
+  	<td>-514.3</td>
+    <td>-689.5</td>
+    <td>277</td>
+    <td>-44.5</td>
+ 	<td>492.2</td>
+    <td>2079.7</td>
+	<td>213</td>
+    <td>78</td>
+    <td>224.2</td>
+    <td>-4</td>
+    <td>15568.7</td>
+  </tr>
+  <tr>
+  <td>-0.41%</td>
+  <td>-0.59%</td>
+  <td>1.34%</td>
+  <td>-0.35%</td>
+  <td>0.19%</td>
+  <td>20.66%</td>
+  <td>2.40%</td>
+  <td>2.53%</td>
+  <td>6.94%</td>
+  <td>-5.39%</td>
+  <td>9.04%</td>
+</table>
+</div>
+
+<div class="card">
   <h3>Persistent IRC client <span class="tag">19 Jul 2026</span></h3>
   <p> This went less smoothly than expected. I intended to use Alpine for a lightweight container just running weechat. However, Alpine doesn't have Mullvad 
     normaly and I've never used weechat or Mullvad on open-rc so I didn't feel like doing that. Tried Arch but had issues with error: no kernel support for landlock. 
