@@ -4,7 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-  @font-face{font-family:Terminus;src:url(/terminus.ttf) format('truetype')}
+  @font-face {
+    font-family: '0xProtoMono';
+    src: url(/fonts/0xProto.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: '0xProtoMono';
+    src: url(/fonts/0xProto-bold.ttf) format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: '0xProtoMono';
+    src: url(/fonts/0xProto-italic.ttf) format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
   *{margin:0;padding:0;box-sizing:border-box}
   body{background:#000;color:#bbb;font:14px/1.5 Terminus;padding:32px;max-width:760px;margin:0 auto}
   a{color:#0f0;text-decoration:none}a:hover{background:#0f0;color:#000}
